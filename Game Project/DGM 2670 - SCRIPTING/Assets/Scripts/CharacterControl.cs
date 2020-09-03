@@ -7,26 +7,19 @@ using UnityEngine;
 public class CharacterControl : MonoBehaviour
 {
     private CharacterController controller;
-    public Vector3 movement;
-    public float gravity = 9.81f;
-    public float moveSpeed = 3f;
-    public float fastMoveSpeed;
-    public float jumpforce = 10f;
-    public int jumpCountMax;
-    public float rotateSpeed;
-    private Vector3 rotateMovement;
+    private Vector3 movement;
+
+    public float moveSpeed = 5f , rotateSpeed = 300f, gravity = -9.81f , jumpForce = 5f;
+    private float yVar;
+
+    public int jumpCountMax = 2;
+    private int jumpCount;
 
 
     //PROBLEM SOLVE - HOW TO MAKE IT SO OBJECT DOESN'T MOVE 
     //VERTICALLY OR HORIZONTALLY WHILE JUMPING!!!
 
     //PROBLEM SOLVE RUN!
-
-    //PROBLEM SOLVE ROTATION
-
-    //PROBLEM SOLVE DOUBLE JUMP!! 
-
-    //PROBLEM SOLVE SUSPENSION IN AIR WHILE JUMPING?
 
     void Start()
     {
@@ -35,25 +28,30 @@ public class CharacterControl : MonoBehaviour
 
     void Update()
     {
-       
+        var vInput = Input.GetAxis("Vertical")* moveSpeed;
+        movement.Set(vInput, yVar, 0);
+
+        var hInput = Input. GetAxis("Horizontal")*rotateSpeed * Time.deltaTime;
+        transform.Rotate(0, hInput, 0);
+
         
-        if(Input.GetButtonDown("Jump"))
+        yVar += gravity * Time.deltaTime;
+
+        if(controller.isGrounded && movement.y < 0)
         {
-            movement.y = jumpforce;
+            yVar = -1f;
+            jumpCount = 0;
         }
 
-        if(controller.isGrounded)
+        if(Input.GetButtonDown("Jump") && jumpCount < jumpCountMax)
         {
-            movement.y = 0;
-        }
-        else
-        {
-             movement.y -= gravity;
+            
+           yVar = jumpForce;
+           jumpCount ++;
         }
 
-        movement.x = Input.GetAxis("Horizontal")* moveSpeed;
-        movement.z = Input.GetAxis("Vertical")* moveSpeed;
-
-        controller.Move(movement*Time.deltaTime);
+        movement = transform.TransformDirection(movement);
+        controller.Move(movement * Time.deltaTime);
+        
     }
 }
