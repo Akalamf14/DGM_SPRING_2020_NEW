@@ -9,8 +9,10 @@ public class CharacterControl : MonoBehaviour
     private CharacterController controller;
     private Vector3 movement;
 
-    public float moveSpeed = 5f , rotateSpeed = 300f, gravity = -9.81f , jumpForce = 5f;
+    public float moveSpeed = 5f, rotateSpeed = 300f, gravity = -9.81f , jumpForce = 5f;
     private float yVar;
+    public bool isRunning = false;
+    
 
     public int jumpCountMax = 2;
     private int jumpCount;
@@ -31,7 +33,7 @@ public class CharacterControl : MonoBehaviour
         var vInput = Input.GetAxis("Vertical")* moveSpeed;
         movement.Set(vInput, yVar, 0);
 
-        var hInput = Input. GetAxis("Horizontal")*rotateSpeed * Time.deltaTime;
+        var hInput = Input.GetAxis("Horizontal")*rotateSpeed * Time.deltaTime;
         transform.Rotate(0, hInput, 0);
 
         
