@@ -71,6 +71,6 @@ public class CharacterControl : MonoBehaviour
 
     private void OnEnable()
     {
-        // set the position of the player to the location data of the player
+        transform.position = currentSpawnPoint.value;
     }
 }

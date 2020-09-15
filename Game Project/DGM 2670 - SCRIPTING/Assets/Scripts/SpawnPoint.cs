@@ -7,11 +7,10 @@ public class SpawnPoint : MonoBehaviour
 
     public Vector3Data vData;
 
-    // Set the vData from the position value
 
-   /*  private void OnTriggerEnter(collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        // set the location data of the player to the current spawn point
+        vData.SetValueFromTransform(transform.position);
     } 
-    */
+    
 }
