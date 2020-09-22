@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LookAt : MonoBehaviour
+public class LookAtBehaviour: MonoBehaviour
 {
     public Transform lookObj;
 
 
-    void Update()
+    public void Look()
     {
         transform.LookAt(lookObj);
         var transformRotation = transform.eulerAngles;
         transformRotation.x = 0;
+        transformRotation.y -= 90;
         transform.rotation = Quaternion.Euler(transformRotation);
     }
 }
