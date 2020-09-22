@@ -9,13 +9,20 @@ public class CharacterHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentHealth = startHealth;
+        currentHealth.value = startHealth.value;
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void TakeDamage(int amount)
     {
+        currentHealth.value -= amount;
+        print (currentHealth.value);
         
+        if(currentHealth.value <= 0)
+        {
+            currentHealth.value = 0;
+        }
     }
+
+
 }

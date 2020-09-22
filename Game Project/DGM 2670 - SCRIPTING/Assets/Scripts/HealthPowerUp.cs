@@ -17,6 +17,8 @@ public class HealthPowerUp : MonoBehaviour
     {
         currentPlayerHealth.value = healthPowerUp.value;
         print(currentPlayerHealth.value);
+        GetComponent<MeshRenderer>().enabled = false;
+        GetComponent<Collider>().enabled = false;
 
     }
 
