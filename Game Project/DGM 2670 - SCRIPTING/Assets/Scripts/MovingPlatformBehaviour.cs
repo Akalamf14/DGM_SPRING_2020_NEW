@@ -4,18 +4,17 @@ using UnityEngine;
 
 public class MovingPlatformBehaviour : MonoBehaviour
 {
-    public Vector3Data currentPosition, positionOne, positionTwo;
-    public float startPosition, smooth, resetTime;
+    public float platformPosition;
 
-    void Start()
+    void Update()
     {
-        currentPosition.value = positionOne.value;
+       platformPosition = transform.Translate(Vector3.up * Time.deltaTime, Space.World);
+
+       if(platformPosition > 5)
+       {
+           platformPosition = 5;
+       } 
+
+
     }
-
-
-    public void Transform()
-    {
-        currentPosition.position.value;
-    }
-
 }
