@@ -8,12 +8,13 @@ public class MovingPlatformBehaviour : MonoBehaviour
 
     void Update()
     {
-       platformPosition = transform.Translate(Vector3.up * Time.deltaTime, Space.World);
+       transform.Translate(Vector3.up * Time.deltaTime, Space.World);
 
-       if(platformPosition > 5)
+      /* if(platformPosition > 5)
        {
            platformPosition = 5;
        } 
+       */
 
 
     }
