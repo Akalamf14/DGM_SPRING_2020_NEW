@@ -4,7 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
 
-public class CharacterControl : MonoBehaviour
+public class CharacterMover : MonoBehaviour
 {
     private CharacterController controller;
     private Vector3 movement;
@@ -18,8 +18,6 @@ public class CharacterControl : MonoBehaviour
 
     public IntData playerJumpCount;
     private int jumpCount;
-
-    public Vector3Data currentSpawnPoint;
 
 
     void Start()
@@ -67,10 +65,5 @@ public class CharacterControl : MonoBehaviour
         
     }
 
-   
 
-    private void OnEnable()
-    {
-        transform.position = currentSpawnPoint.value;
-    }
 }
