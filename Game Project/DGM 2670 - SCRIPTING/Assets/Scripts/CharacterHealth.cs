@@ -21,7 +21,15 @@ public class CharacterHealth : MonoBehaviour
         if(currentHealth.value <= 0)
         {
             currentHealth.value = 0;
+
+            GetComponent<MeshRenderer>().enabled = false;
+            GetComponent<Collider>().enabled = false;
+            yield return new WaitForSeconds(waitTime);
         }
+
+        
+        currentHealth.value = startHealth.value;
+        
     }
 
 
