@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 [RequireComponent(typeof(CharacterController))]
+
 public class CharacterKnockBack : MonoBehaviour
 {
    private CharacterController controller;
@@ -15,16 +17,18 @@ public class CharacterKnockBack : MonoBehaviour
        controller.Move(move * Time.deltaTime);
    }
 
-   private IEnumerator OnTriggerEnter(collider other)
+   private IEnumerator OnTriggerEnter(Collider other)
    {
        var i = 2f;
        move = other.attachedRigidbody.velocity* i;
        while (i > 0)
        {
            yield return new WaitForFixedUpdate();
-           i -=0.1f;
+           i -= 0.1f;
        }
 
        move = Vector3.left;
    }
 }
+
+

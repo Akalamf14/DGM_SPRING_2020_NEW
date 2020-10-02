@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CharacterHealth : MonoBehaviour
 {
-    public IntData startHealth, currentHealth;
+   /* public IntData startHealth, currentHealth;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +31,7 @@ public class CharacterHealth : MonoBehaviour
         currentHealth.value = startHealth.value;
         
     }
+    */
 
 
 }
