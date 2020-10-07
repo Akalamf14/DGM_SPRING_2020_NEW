@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    public IntData startHealth, currentHealth;
+   /* public IntData startHealth, currentHealth;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +20,6 @@ public class Health : MonoBehaviour
         print(currentHealth.value);
     }
     
-
+    */
 
 }
