@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class ApplyForce : MonoBehaviour
+public class ApplyForceBehaviour : MonoBehaviour
 {
     private Rigidbody rBody;
     public float force = 30f;

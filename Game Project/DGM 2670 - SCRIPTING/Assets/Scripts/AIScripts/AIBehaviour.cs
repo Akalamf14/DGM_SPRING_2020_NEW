@@ -6,38 +6,46 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class AIBehaviour : MonoBehaviour
 {
+    private WaitForFixedUpdate wffu = new WaitForFixedUpdate();
     private NavMeshAgent agent;
     public Transform player;
-    private bool canNavigate = true;
-    private WaitForFixedUpdate wffu;
-    public float holdTime = 1f;
-    private WaitForSeconds wfs;
-
+    private bool canHunt, canPatrol;
+    
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        wfs = new WaitForSeconds(holdTime);
+        //StartCoroutine(Patrol());
+
     }
 
-    private IEnumerator Navigate()
+    private IEnumerator OnTriggerEnter(Collider other)
     {
-        canNavigate = true;
-        yield return wfs;
-        while(canNavigate)
+        canHunt = true;
+        agent.destination = player.position;
+        var distance = agent.remainingDistance;
+        
+        while(distance <= 0.25f)
         {
-            yield return wfs;
-            agent.destination = player.position;
-        }
-    }
+            distance = agent.remainingDistance;
+            yield return wffu;
 
-    private void OnTriggerEnter(Collision other)
-    {
-        canNavigate = false;
-        StartCoroutine(Navigate());
+        }
+
+        yield return new WaitForSeconds(2f);
+
+        if(canHunt)
+        {
+            StartCoroutine(OnTriggerEnter(other));
+        }
+        else
+        {
+            //StartCoroutine(Patrol());
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        canNavigate = false;
+        canHunt = false;
     }
+  
 }

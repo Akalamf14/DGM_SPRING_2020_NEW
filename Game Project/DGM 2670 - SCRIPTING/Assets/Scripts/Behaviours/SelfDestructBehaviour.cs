@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SelfDestruct : MonoBehaviour
+public class SelfDestructBehaviour : MonoBehaviour
 {
     IEnumerator Start()
     {
