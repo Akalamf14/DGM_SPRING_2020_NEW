@@ -14,7 +14,7 @@ public class AIBehaviour : MonoBehaviour
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        //StartCoroutine(Patrol());
+        
 
     }
 
@@ -39,7 +39,7 @@ public class AIBehaviour : MonoBehaviour
         }
         else
         {
-            //StartCoroutine(Patrol());
+            
         }
     }
 
