@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fda901319a8c5d54dad97a3638252aa6, type: 3}
-  m_Name: Dialouge
+  m_Script: {fileID: 11500000, guid: 93872432e35a906448793f6df84270ed, type: 3}
+  m_Name: PlayerHealth
   m_EditorClassIdentifier: 
-  stringList:
-  - Hello
-  - Welcome to our Kingdom
-  - please save us
-  - 
+  value: 0
+  lessThanZeroEvent:
+    m_PersistentCalls:
+      m_Calls: []
