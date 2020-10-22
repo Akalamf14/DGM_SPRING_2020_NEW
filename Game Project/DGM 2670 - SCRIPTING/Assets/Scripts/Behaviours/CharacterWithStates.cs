@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 [RequireComponent(typeof(CharacterController))]
 public class CharacterWithStates : MonoBehaviour
 {
     private CharacterController controller;
-    public CharacterStateMachineData characterStates;
+    public CharacterStateMachineData CharacterStates;
 
     private Vector3 movement;
     public float moveSpeed = 3;
@@ -21,24 +22,24 @@ public class CharacterWithStates : MonoBehaviour
     {
         var newInput = Input.GetAxis("Vertical") * moveSpeed;
 
-        switch(characterStates.value)
+        switch(CharacterStates.value)
         {
-            case CharacterStateMachineData.characterStates.StandardWalk:
-                moveSpeed.Set(newInput, gravity, 0);
+            case CharacterStateMachineData.CharacterStates.StandardWalk:
+                movement.Set(newInput, gravity, 0);
                 print("Walk");
                 break;
 
-            case CharacterStateMachineData.characterStates.NoGravityWalk:
-                moveSpeed.Set(newInput, 0, 0);
+            case CharacterStateMachineData.CharacterStates.NoGravityWalk:
+                movement.Set(newInput, 0, 0);
                 print("Walk");
                 break;
             
-            case CharacterStateMachineData.CharacterWithStates.WallCrawl:
+            case CharacterStateMachineData.CharacterStates.WallCrawl:
                 movement.Set(0, newInput, 0);
                 print("Crawl");
                 break;
             
-            case CharacterStateMachineData.characterStates.KnockBack:
+            case CharacterStateMachineData.CharacterStates.KnockBack:
                 print("KnockBack");
                 break;
         }

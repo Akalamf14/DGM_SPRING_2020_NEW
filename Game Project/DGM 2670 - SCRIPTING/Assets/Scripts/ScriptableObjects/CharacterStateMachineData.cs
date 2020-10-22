@@ -27,11 +27,11 @@ public class CharacterStateMachineData : ScriptableObject
 
     public void WallCrawl()
     {
-        value = characterStates.WallCrawl;
+        value = CharacterStates.WallCrawl;
     }
 
     public void KnockBack()
     {
-        value = characterStates.KnockBack;
+        value = CharacterStates.KnockBack;
     }
 }
