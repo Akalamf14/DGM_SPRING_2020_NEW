@@ -28,4 +28,4 @@ public class PortalBehaviour : MonoBehaviour
 2. make it so you can only teleport to the last portal you triggered
 3. if battling you can't teleport to leave the situation, you can't do that until after
 4. you can only teleport to portal that you have discovered(triggered list) as you trigger new portals they are added to the list?
-
+*/
