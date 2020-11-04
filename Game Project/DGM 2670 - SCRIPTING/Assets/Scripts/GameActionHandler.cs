@@ -10,7 +10,7 @@ public class GameActionHandler : MonoBehaviour
     public float holdTime = 3f;
     public bool stopHandling;
 
-    public bool stopHandling
+    public bool StopHandling
     {
         get => stopHandling;
         set => stopHandling = value;
