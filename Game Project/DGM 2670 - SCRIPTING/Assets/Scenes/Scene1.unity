@@ -964,6 +964,7 @@ GameObject:
   - component: {fileID: 1320448611}
   - component: {fileID: 1320448612}
   - component: {fileID: 1320448613}
+  - component: {fileID: 1320448614}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -978,7 +979,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1320448604}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a62c887c01817e45b6a747e191b5b64, type: 3}
   m_Name: 
@@ -1127,6 +1128,25 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1320448614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320448604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5d1a337707f36f4d976174268f3e581, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseLocation: {fileID: 11400000, guid: 4e0da58378704f14bbfeaf3fed3b1e38, type: 2}
+  rotateSpeed: 30
+  gravity: -9.81
+  jumpForce: 10
+  normalSpeed: {fileID: 11400000, guid: 3bea6700cbfb72e42a9603a360fcb9ba, type: 2}
+  fastSpeed: {fileID: 11400000, guid: 182fc30d81eebc549b031ac5395241e9, type: 2}
+  playerJumpCount: {fileID: 11400000, guid: b27cd7399fb207b4e832d0df12057837, type: 2}
 --- !u!1 &1628542046
 GameObject:
   m_ObjectHideFlags: 0
