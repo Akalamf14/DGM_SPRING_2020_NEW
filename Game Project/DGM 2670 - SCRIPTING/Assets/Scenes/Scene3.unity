@@ -260,7 +260,7 @@ PrefabInstance:
     - target: {fileID: -425565630206218756, guid: 239ef8a627d0f9b4f93554312c5e79cf, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 285523d4ffd591c4a9d6a734236d77b2, type: 2}
+      objectReference: {fileID: 2100000, guid: bd94bac40b0b47345b59b5788413b977, type: 2}
     - target: {fileID: 919132149155446097, guid: 239ef8a627d0f9b4f93554312c5e79cf, type: 3}
       propertyPath: m_Name
       value: Drop bottle
